@@ -1,2 +1,2 @@
-***DESTINITTY 
-** NITT Webpage for students
+*** DESTINITTY *** 
+** NITT Webpage for students **
