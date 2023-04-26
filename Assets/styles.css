@@ -4,12 +4,25 @@
 	padding: 0px;
 	box-sizing: border-box;
 }
-.top-bar{
-	height: 10%;
 
-	background-image: linear-gradient(rgba(71, 198, 153, 0.5), rgba(71, 198, 153, 0.5)), url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F301614%2Fpexels-photo-301614.jpeg%3Fcs%3Dsrgb%26dl%3Dpexels-pixabay-301614.jpg%26fm%3Djpg&tbnid=BikGMFNsLUR_MM&vet=12ahUKEwj5-9aGvcf-AhWDVHwKHcsxBxsQMygHegUIARD9AQ..i&imgrefurl=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fzen%2F&docid=nCtQgIkE9CKwjM&w=5996&h=4002&q=zen%20images&ved=2ahUKEwj5-9aGvcf-AhWDVHwKHcsxBxsQMygHegUIARD9AQ);
+#title-bar{
+	background-color: rgba(4, 71, 114, 0.8);
 }
-.image{
-	display: block;
+
+#image{
+	background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('https://raw.githubusercontent.com/akilesh-5101/Destinitty/main/images/NITT.png');
+	background-repeat: no-repeat;
+	height: 100vh;
+	background-size: cover;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.title{
+	font-family: 'Courgette','Roboto-Slab', 'sans-serif', cursive;
+	font-size: 30px;
+	margin-left: 10%;
+}
+
+.login{
 
 }
