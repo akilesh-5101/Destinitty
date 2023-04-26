@@ -7,27 +7,23 @@
 
 #title-bar{
 	background-color: rgba(4, 71, 114, 0.8);
+	height: 50px;
 }
-<<<<<<< HEAD
 
-#image{
-	background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('https://raw.githubusercontent.com/akilesh-5101/Destinitty/main/images/NITT.png');
+body{
+	background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.2)), url('https://raw.githubusercontent.com/akilesh-5101/Destinitty/main/images/NITT.png');
 	background-repeat: no-repeat;
+	background-size: 100% 100% ;
 	height: 100vh;
-	background-size: cover;
-	margin-left: -15px;
-	margin-right: -15px;
 }
+
 .title{
 	font-family: 'Courgette','Roboto-Slab', 'sans-serif', cursive;
 	font-size: 30px;
 	margin-left: 10%;
 }
 
-.login{
 
-=======
 .image{
 	display: block;
->>>>>>> 2d12478d7ba2263d7ae15e2056ebf3ace648fde5
 }
