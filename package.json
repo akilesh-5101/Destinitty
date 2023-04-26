@@ -1,0 +1,28 @@
+{
+  "name": "Project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "destinitty": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akilesh-5101/Destinitty.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akilesh-5101/Destinitty/issues"
+  },
+  "homepage": "https://github.com/akilesh-5101/Destinitty#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
