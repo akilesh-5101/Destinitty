@@ -8,6 +8,7 @@
 #title-bar{
 	background-color: rgba(4, 71, 114, 0.8);
 }
+<<<<<<< HEAD
 
 #image{
 	background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('https://raw.githubusercontent.com/akilesh-5101/Destinitty/main/images/NITT.png');
@@ -25,4 +26,8 @@
 
 .login{
 
+=======
+.image{
+	display: block;
+>>>>>>> 2d12478d7ba2263d7ae15e2056ebf3ace648fde5
 }
