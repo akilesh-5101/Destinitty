@@ -21,7 +21,36 @@
 				<a href="/account/signin" class="text-white text-decoration-none">Sign In</a>
 			</div>
 		</div>
-		
+		<div class="modal fade" id="modal">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4>Sign In</h4>
+					</div>
+					<div class="modal-body">
+						<form novalidate>
+							<div class="form-floating">
+								<input type="email" id='email' class="form-control" placeholder="email" required>
+								<label for='email'>Email</label>
+								<div class="invalid-feedback">Invalid Email</div>
+								<div class="valid-feedback">Valid Email</div>
+								inp
+							</div>
+							<button class="btn btn-primary" data-bs-dismiss="modal" data-bs-target="#modal">Continue</button>
+						</form>
+						<script>
+							const form = document.querySelector("form");
+							form.addEventListener('input', e => {
+								if(!form.checkValidity()){
+									e.preventDefault()
+								}
+								form.classList.add('was-validated')
+							});
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
