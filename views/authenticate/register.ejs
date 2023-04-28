@@ -12,6 +12,31 @@
 
 </head>
 <body>
-	<div class='container-fluid'></div>
+	<div class='container-fluid'>
+		<div class="modal fade" id="modal">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4>Register</h4>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-floating" style="margin-bottom:5px">
+								<input type="email" id='Email' class="form-control" placeholder="email" required>
+								<label for='email'>Email</label>
+								<!-- <div class="invalid-feedback">Invalid Email</div>
+								<div class="valid-feedback">Valid Email</div> -->
+							</div>
+							<div class="form-floating" style="margin-bottom:15px">
+								<input type="password" class="form-control" id="password" placeholder="password" required>
+								<label for="password">Password</label>
+							</div>
+							<button class="btn col-12 btn-primary" data-bs-dismiss="modal" data-bs-target="#modal">Sign In</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

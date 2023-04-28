@@ -14,38 +14,80 @@
 <body>
 	<div class='container-fluid'>
 		<div class='row align-items-center d-flex'  id='title-bar'>
-			<div class='col-1 offset-10 text-wcdhite'>
-				<a href="/account/register" class="text-white text-decoration-none">Register</a>
+			<div class='col-1 offset-10 text-white'>
+				<button class="text-white btn btn-primary" data-bs-toggle='modal' data-bs-target="#register">
+					 Register</button>
 			</div>
 			<div class="col-1 text-white">
-				<a href="/account/signin" class="text-white text-decoration-none">Sign In</a>
+				<button class="text-white btn btn-primary" data-bs-toggle='modal' data-bs-target="#signin">
+					Sign In</button>
 			</div>
 		</div>
-		<div class="modal fade" id="modal">
+		<div class="modal fade" id="signin">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h4>Sign In</h4>
 					</div>
 					<div class="modal-body">
-						<form novalidate>
-							<div class="form-floating">
-								<input type="email" id='email' class="form-control" placeholder="email" required>
+						<form>
+							<div class="form-floating" style="margin-bottom:5px">
+								<input type="email" id='Email' class="form-control" placeholder="email" required>
 								<label for='email'>Email</label>
-								<div class="invalid-feedback">Invalid Email</div>
-								<div class="valid-feedback">Valid Email</div>
-								inp
+								<!-- <div class="invalid-feedback">Invalid Email</div>
+								<div class="valid-feedback">Valid Email</div> -->
 							</div>
-							<button class="btn btn-primary" data-bs-dismiss="modal" data-bs-target="#modal">Continue</button>
+							<div class="form-floating" style="margin-bottom:15px">
+								<input type="password" class="form-control" id="password" placeholder="password" required>
+								<label for="password">Password</label>
+							</div>
+							<button class="btn col-12 btn-primary" data-bs-dismiss="modal" data-bs-target="#signin">Sign In</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="register">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4>Register New Account</h4>
+					</div>
+					<div class="modal-body">
+						<form id="registerChk">
+							<div class="form-floating" style="margin-bottom:5px">
+								<input type="email" id='Reg_Email' class="form-control" placeholder="email" required>
+								<label for='email'>Institute Email</label>
+								<!-- <div class="invalid-feedback">Invalid Email</div>
+								<div class="valid-feedback">Valid Email</div> -->
+							</div>
+							<div class="form-floating" style="margin-bottom:5px">
+								<input type="password" class="form-control" id="password_new" placeholder="password" required>
+								<label for="password">New Password</label>
+							</div>
+							<div class="form-floating" style="margin-bottom:15px">
+								<input type="password" class="form-control" id="password_conf" placeholder="password" required>
+								<label for="password">Confirm Password</label>
+							</div>
+							<button class="btn col-12 btn-primary">Register</button>
 						</form>
 						<script>
-							const form = document.querySelector("form");
-							form.addEventListener('input', e => {
-								if(!form.checkValidity()){
-									e.preventDefault()
+							// Script for Destinitty
+								const register = document.querySelector('#registerChk');
+								register.children[3].addEventListener('click',passwordCheck);
+
+								const message = document.createElement('p');
+
+								function passwordCheck(event){
+								    if(register.children[1].children[0].value !== register.children[2].children[0].value){
+								        message.innerHTML = '*Passwords do not match'
+								        register.appendChild(message);
+								    }
+								    else{
+								        register.children[3].setAttribute('data-bs-dismiss','modal');
+										register.children[3].setAttribute('data-bs-target','register');
+								    }
 								}
-								form.classList.add('was-validated')
-							});
 						</script>
 					</div>
 				</div>
