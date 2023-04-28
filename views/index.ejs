@@ -7,6 +7,7 @@
 	<link rel='stylesheet' href='/styles.css' >
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<script defer src="/userAuth.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Roboto+Slab:wght@400;600&family=Source+Sans+Pro&display=swap" rel="stylesheet">
 	<%- include('./../Assets/_bootstrap_link') %>
 
@@ -23,6 +24,9 @@
 					Sign In</button>
 			</div>
 		</div>
+		<div class="justify-content-center d-flex text-danger">
+			<span><%= mes %></span>
+		</div>
 		<div class="modal fade" id="signin">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
@@ -30,19 +34,19 @@
 						<h4>Sign In</h4>
 					</div>
 					<div class="modal-body">
-						<form>
+						<form id="signinChk" action="/signin" method="POST">
 							<div class="form-floating" style="margin-bottom:5px">
-								<input type="email" id='Email' class="form-control" placeholder="email" required>
+								<input name="name" type="email" id='Email' class="form-control" placeholder="email" required>
 								<label for='email'>Email</label>
 								<!-- <div class="invalid-feedback">Invalid Email</div>
 								<div class="valid-feedback">Valid Email</div> -->
 							</div>
 							<div class="form-floating" style="margin-bottom:15px">
-								<input type="password" class="form-control" id="password" placeholder="password" required>
+								<input name="password" type="password" class="form-control" id="password" placeholder="password" required>
 								<label for="password">Password</label>
 							</div>
-							<button class="btn col-12 btn-primary" data-bs-dismiss="modal" data-bs-target="#signin">Sign In</button>
 						</form>
+						<button class="btn col-12 btn-primary" id="signbtn">Sign In</button>
 					</div>
 				</div>
 			</div>
@@ -54,41 +58,23 @@
 						<h4>Register New Account</h4>
 					</div>
 					<div class="modal-body">
-						<form id="registerChk">
+						<form id="registerChk" action="/register" method="POST">
 							<div class="form-floating" style="margin-bottom:5px">
-								<input type="email" id='Reg_Email' class="form-control" placeholder="email" required>
+								<input name="name" type="email" id='Reg_Email' class="form-control" placeholder="email" required>
 								<label for='email'>Institute Email</label>
 								<!-- <div class="invalid-feedback">Invalid Email</div>
 								<div class="valid-feedback">Valid Email</div> -->
 							</div>
 							<div class="form-floating" style="margin-bottom:5px">
-								<input type="password" class="form-control" id="password_new" placeholder="password" required>
+								<input name="password" type="password" class="form-control" id="password_new" placeholder="password" required>
 								<label for="password">New Password</label>
 							</div>
 							<div class="form-floating" style="margin-bottom:15px">
 								<input type="password" class="form-control" id="password_conf" placeholder="password" required>
 								<label for="password">Confirm Password</label>
 							</div>
-							<button class="btn col-12 btn-primary">Register</button>
 						</form>
-						<script>
-							// Script for Destinitty
-								const register = document.querySelector('#registerChk');
-								register.children[3].addEventListener('click',passwordCheck);
-
-								const message = document.createElement('p');
-
-								function passwordCheck(event){
-								    if(register.children[1].children[0].value !== register.children[2].children[0].value){
-								        message.innerHTML = '*Passwords do not match'
-								        register.appendChild(message);
-								    }
-								    else{
-								        register.children[3].setAttribute('data-bs-dismiss','modal');
-										register.children[3].setAttribute('data-bs-target','register');
-								    }
-								}
-						</script>
+						<button class="btn col-12 btn-primary" id="regbtn">Register</button>
 					</div>
 				</div>
 			</div>
