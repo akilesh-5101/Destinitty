@@ -15,7 +15,7 @@ body{
 
 .card{
     top: 30%;
-    min-height: 325px;
+    min-height: 50vh;
 }
 
 #one{
