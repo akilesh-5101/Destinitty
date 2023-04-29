@@ -19,17 +19,20 @@ body{
 }
 
 #one{
-	background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.9)),url('https://t3.ftcdn.net/jpg/01/61/13/66/360_F_161136674_NgVFcPtWfwLPY03NpJUrSiH9oDvma9Rn.jpg');
+	background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.9)),url('https://t3.ftcdn.net/jpg/01/61/13/66/360_F_161136674_NgVFcPtWfwLPY03NpJUrSiH9oDvma9Rn.jpg');
 }
 
 #two{
-	background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.9)),url('https://www.tajhotels.com/content/dam/luxury/hotels/taj-coromandel/images/4x3/Chipstead-Food-Shot-1.JPG/jcr:content/renditions/cq5dam.web.512.512.jpeg');
+	background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.9)),url('https://www.tajhotels.com/content/dam/luxury/hotels/taj-coromandel/images/4x3/Chipstead-Food-Shot-1.JPG/jcr:content/renditions/cq5dam.web.512.512.jpeg');
 }
 
 #three{
-	background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.9)),url('https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg?w=740&t=st=1682793639~exp=1682794239~hmac=0b0ca5943cca366d788d55a3ffa28ed1547fb3b9e73326d11733aa7fbf6215a4');
+	background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.9)),url('https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg?w=740&t=st=1682793639~exp=1682794239~hmac=0b0ca5943cca366d788d55a3ffa28ed1547fb3b9e73326d11733aa7fbf6215a4');
 }
 button{
     position: absolute;
-    bottom: 10px;
+    bottom: 3%;
+}
+button:hover{
+    text-decoration-color: black;
 }

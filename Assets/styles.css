@@ -30,14 +30,14 @@ button{
 
 .title-mid{
 	font-family: 'Orbitron', sans-serif;
-	font-size: 180px;
+	font-size: 1100%;
 	color: white;
 }
 .title-start{
 	font-family: 'Amatic SC', cursive;
 	 /* font-family: 'Bruno Ace SC', cursive; */
 	/* font-family: 'Orbitron', sans-serif;  */
-	font-size: 180px;
+	font-size: 1100%;
 	color: white;
 }
 #dest{
