@@ -79,9 +79,8 @@ app.get('/userlist', async (req,res) =>{
 	res.send(users);
 })
 /*   ****** Forbidden function   (delete all data in mongo)
-app.get('/userdelete', async (req,res) =>{
+	app.get('/userdelete', async (req,res) =>{
 	await USER.deleteMany({});
 	res.send('Data lost');
 })
 */
-

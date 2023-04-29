@@ -14,16 +14,25 @@ signin.addEventListener('input', e =>{
     signin.classList.add('was-validated');  
 });
 
-const message = document.createElement('span');
+const message1 = document.createElement('p');
+const message2 = document.createElement('p');
+
+function linebreak(){
+    return "\n";
+}
 
 function passwordCheck(event){
+    message1.style.color = 'red';
+    message2.style.color = 'red';
+    register.appendChild(message1);
+    register.appendChild(message2);
     if(register.children[1].children[0].value !== register.children[2].children[0].value && register.children[1].children[0].value!== null){
-        message.innerHTML = '*Passwords do not match';
-        message.style.color = 'red';
-        register.appendChild(message);
+        message1.textContent = '*Passwords do not match';
     }
-    else {
-        if(register.children[0].children[0].value)
+    if(register.children[0].children[0].value.split('@')[1] !=='nitt.edu'){
+        message2.textContent = '*Not an NITT mail id';
+    }
+    else{
         regbtn.setAttribute('data-bs-target','#register');
         regbtn.setAttribute('data-bs-dismiss','modal');
         register.submit();
