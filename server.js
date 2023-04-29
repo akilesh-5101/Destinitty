@@ -70,7 +70,7 @@ app.post("/", async(req, res) => {
 });
 
 app.get('/homepage', (req,res) => {
-	res.render('homepage', {user: username});
+	res.render('homepage', {user: username.split('@')[0]});
 })
 
 // To check user login credentials (in case of emergency)  

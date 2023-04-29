@@ -11,26 +11,27 @@
 	<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Roboto+Slab:wght@400;600&family=Source+Sans+Pro&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Orbitron:wght@600&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Bruno+Ace+SC&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Bruno+Ace+SC&family=Orbitron:wght@600&display=swap" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Bruno+Ace+SC&family=Orbitron:wght@600&family=Oswald:wght@300&display=swap" rel="stylesheet">
 	<%- include('./../Assets/_bootstrap_link') %>
 
 </head>
 <body>
 	<div class='container-fluid'>
 		<div class='row align-items-center d-flex'  id='header-bar'>
-			<div class='col-auto offset-10 text-white'>
+			<div class='col-auto offset-10 gy-2 text-white'>
 				<button class="rounded-3 text-white" data-bs-toggle='modal' data-bs-target="#register">
 					 Register</button>
 			</div>
-			<div class="col-auto text-white">
+			<div class="col-auto gy-2 text-white">
 				<button class="rounded-3 text-white" data-bs-toggle='modal' data-bs-target="#signin">
 					Sign In</button>
 			</div>
 		</div>
-		<div id="dest">
-			<span class="title-start">DESTI</span>
+		<div id="dest" >
+			<a href="/" class="text-decoration-none"><span class="title-start">DESTI</span>
 			<span class="title-mid">NITT</span>
-			<span class="title-start">Y</span>
+			<span class="title-start">Y</span></a>
 		</div>
 		<div class="justify-content-center d-flex text-danger">
 			<span><%= mes %></span>
@@ -66,7 +67,7 @@
 						<h4>Register New Account</h4>
 					</div>
 					<div class="modal-body">
-						<form class='needs-validation' id="registerChk" action="/register" method="POST" novalidate>
+						<form id="registerChk" action="/register" method="POST" novalidate>
 							<div class="form-floating" style="margin-bottom:5px">
 								<input name="name" type="email" id='Reg_Email' class="form-control" placeholder="email" required>
 								<label for='email'>Institute Email</label>

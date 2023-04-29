@@ -25,6 +25,7 @@ button{
 	border-radius: 10px;
 	background-color: transparent;
 	padding: 5px;
+	user-select: none;
 }
 
 .title-mid{
@@ -34,15 +35,16 @@ button{
 }
 .title-start{
 	font-family: 'Amatic SC', cursive;
-	/* font-family: 'Bruno Ace SC', cursive;
-	font-family: 'Orbitron', sans-serif; */
+	 /* font-family: 'Bruno Ace SC', cursive; */
+	/* font-family: 'Orbitron', sans-serif;  */
 	font-size: 180px;
 	color: white;
 }
 #dest{
 	position: absolute;
 	top: 26%;
-	left: 8%
+	left: 8%;
+	user-select: none;
 }
 .modal-content{
 	background-image: url('https://raw.githubusercontent.com/akilesh-5101/Destinitty/main/images/aerial-shot-nitt.png');
