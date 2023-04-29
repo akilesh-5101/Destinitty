@@ -5,13 +5,10 @@
 	box-sizing: border-box;
 }
 
-#title-bar{
-	background-color: rgba(4, 71, 114, 0.8);
-	height: 50px;
-}
+
 
 body{
-	background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.2)), url('https://raw.githubusercontent.com/akilesh-5101/Destinitty/main/images/NITT.png');
+	background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('https://raw.githubusercontent.com/akilesh-5101/Destinitty/main/images/aerial-shot-nitt.png');
 	background-repeat: no-repeat;
 	background-size: 100% 100% ;
 	height: 100vh;
@@ -21,4 +18,32 @@ body{
 	font-family: 'Courgette','Roboto-Slab', 'sans-serif', cursive;
 	font-size: 30px;
 	margin-left: 10%;
+}
+
+button{
+	border: 2px solid white ;
+	border-radius: 10px;
+	background-color: transparent;
+	padding: 5px;
+}
+
+.title-mid{
+	font-family: 'Orbitron', sans-serif;
+	font-size: 180px;
+	color: white;
+}
+.title-start{
+	font-family: 'Amatic SC', cursive;
+	/* font-family: 'Bruno Ace SC', cursive;
+	font-family: 'Orbitron', sans-serif; */
+	font-size: 180px;
+	color: white;
+}
+#dest{
+	position: absolute;
+	top: 26%;
+	left: 8%
+}
+.modal-content{
+	background-image: url('https://raw.githubusercontent.com/akilesh-5101/Destinitty/main/images/aerial-shot-nitt.png');
 }
