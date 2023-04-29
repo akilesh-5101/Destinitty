@@ -34,12 +34,12 @@
 						<h4>Sign In</h4>
 					</div>
 					<div class="modal-body">
-						<form id="signinChk" action="/signin" method="POST">
+						<form id="signinChk" action="/" method="POST" novalidate>
 							<div class="form-floating" style="margin-bottom:5px">
 								<input name="name" type="email" id='Email' class="form-control" placeholder="email" required>
 								<label for='email'>Email</label>
-								<!-- <div class="invalid-feedback">Invalid Email</div>
-								<div class="valid-feedback">Valid Email</div> -->
+								<div class="invalid-feedback">Invalid Email</div>
+								<div class="valid-feedback">Valid Email</div>
 							</div>
 							<div class="form-floating" style="margin-bottom:15px">
 								<input name="password" type="password" class="form-control" id="password" placeholder="password" required>
@@ -58,12 +58,12 @@
 						<h4>Register New Account</h4>
 					</div>
 					<div class="modal-body">
-						<form id="registerChk" action="/register" method="POST">
+						<form class='needs-validation' id="registerChk" action="/register" method="POST" novalidate>
 							<div class="form-floating" style="margin-bottom:5px">
 								<input name="name" type="email" id='Reg_Email' class="form-control" placeholder="email" required>
 								<label for='email'>Institute Email</label>
-								<!-- <div class="invalid-feedback">Invalid Email</div>
-								<div class="valid-feedback">Valid Email</div> -->
+								<div class="invalid-feedback">Invalid Email</div>
+								<div class="valid-feedback">Valid Email</div>
 							</div>
 							<div class="form-floating" style="margin-bottom:5px">
 								<input name="password" type="password" class="form-control" id="password_new" placeholder="password" required>

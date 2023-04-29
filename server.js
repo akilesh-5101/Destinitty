@@ -17,20 +17,16 @@ app.use(express.static(__dirname + '/Assets'));
 app.get('/',(req,res) => {
 	res.render('index', {mes: ''});
 });
-// app.get('/register',(req,res) => {
-// 	res.render('index', {mes: ''});
-// });
-// app.get('/signin',(req,res) => {
-// 	res.render('index', {mes: ''});
-// });
+
 let username = '';
+
 app.post("/register", async(req, res) => {
 	const myData = {
 		email: req.body.name,
 		password: req.body.password
 	}
 	const check_user = await USER.findOne({email: myData.email});
-	if(check_user !== null){
+	if(check_user === null){
 		try{
 			await USER.insertMany([myData]);
 			console.log("item saved to database");
@@ -46,9 +42,9 @@ app.post("/register", async(req, res) => {
 	}
 	
 	
-  });
+});
 
-app.post("/signin", async(req, res) => {
+app.post("/", async(req, res) => {
 	const myData = {
 		email: req.body.name,
 		password: req.body.password
@@ -71,16 +67,21 @@ app.post("/signin", async(req, res) => {
 		}
 	}
 	
-	
-  });
+});
 
+app.get('/homepage', (req,res) => {
+	res.render('homepage', {user: username});
+})
 
 // To check user login credentials (in case of emergency)  
 app.get('/userlist', async (req,res) =>{
 	const users = await USER.find({});
 	res.send(users);
 })
-
-app.get('/homepage', (req,res) => {
-	res.render('homepage', {user: username});
+/*   ****** Forbidden function   (delete all data in mongo)
+app.get('/userdelete', async (req,res) =>{
+	await USER.deleteMany({});
+	res.send('Data lost');
 })
+*/
+

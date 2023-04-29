@@ -6,7 +6,13 @@ const regbtn = document.querySelector('#regbtn');
 const signbtn = document.querySelector('#signbtn');
 
 regbtn.addEventListener('click',passwordCheck);
-signbtn.addEventListener('click',passwordCheck);
+signbtn.addEventListener('click',next);
+signin.addEventListener('input', e =>{
+    if(!signin.checkValidity()){
+        e.preventDefault();
+    }
+    signin.classList.add('was-validated');  
+});
 
 const message = document.createElement('span');
 
@@ -17,6 +23,7 @@ function passwordCheck(event){
         register.appendChild(message);
     }
     else {
+        if(register.children[0].children[0].value)
         regbtn.setAttribute('data-bs-target','#register');
         regbtn.setAttribute('data-bs-dismiss','modal');
         register.submit();
@@ -28,7 +35,7 @@ regbtn.addEventListener('click',passwordCheck);
 // signin.children[3].addEventListener('click')
 
 
-function passwordCheck(event){
+function next(event){
     signbtn.setAttribute('data-bs-target','#register');
     signbtn.setAttribute('data-bs-dismiss','modal');
     signin.submit();
