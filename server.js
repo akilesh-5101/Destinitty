@@ -79,8 +79,20 @@ app.get('/homepage', (req,res) => {
 	res.render('homepage', {user: username.split('@')[0]});
 })
 
-app.get('/Canteens', (req,res) => {
-	res.render('food', {user: username.split('@')[0], review: '' });
+app.get('/Canteens', async(req,res) => {
+	let review = '';
+	try{
+		function extract() {
+			return User_Review.find({})
+		}
+		review = await new Promise(extract => setTimeout(extract, 2000));
+	} catch (error) {
+		console.log(error);
+	}
+	if(review !== undefined){
+	res.render('food', {user: username.split('@')[0], review: review.review });
+	}
+	else res.render('food', {user: username.split('@')[0], review: ''});
 })
 
 app.get('/Restaurants', (req,res) => {
@@ -101,16 +113,8 @@ app.post("/Canteens", async(req, res) => {
 	} catch (error) {
 		console.log(error);
 	}
-	res.render('food', {user: username.split('@')[0], review: myData.review})
+		res.render('food', {user: username.split('@')[0], review: myData.review});
 });
-
-
-
-
-
-
-
-
 
 
 
@@ -125,4 +129,13 @@ app.get('/userlist', async (req,res) =>{
 	res.send('Data lost');
 })
 */
+// Forbidden
+app.get('/reviewdelete', async (req,res) =>{
+	await User_Review.deleteMany({});
+	res.send('Data lost');
+})
 
+app.get('/reviewlist', async (req,res) =>{
+	const users = await User_Review.find({});
+	res.send(users);
+})
