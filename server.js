@@ -2,8 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const USER = require('./Models/UserMongo');
-
+const User_Review = require('./Models/review');
 app.listen(5000);
+
+mongoose.connect('mongodb://0.0.0.0:27017/user', {useNewUrlParser:true, useUnifiedTopology:true}).then(() => {
+    console.log('mongodb connected');
+}).catch((error) =>{
+    console.log('Failed to connect ' + error);
+})
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -73,6 +79,41 @@ app.get('/homepage', (req,res) => {
 	res.render('homepage', {user: username.split('@')[0]});
 })
 
+app.get('/Canteens', (req,res) => {
+	res.render('food', {user: username.split('@')[0], review: '' });
+})
+
+app.get('/Restaurants', (req,res) => {
+	res.render('food', {user: username.split('@')[0], review: ''});
+})
+
+app.get('/Messes', (req,res) => {
+	res.render('food', {user: username.split('@')[0], review: ''});
+})
+
+app.post("/Canteens", async(req, res) => {
+	const myData = {
+		review: req.body.name
+	}
+	try{
+		await User_Review.insertMany([myData]);
+		console.log("item saved to database");
+	} catch (error) {
+		console.log(error);
+	}
+	res.render('food', {user: username.split('@')[0], review: myData.review})
+});
+
+
+
+
+
+
+
+
+
+
+
 // To check user login credentials (in case of emergency)  
 app.get('/userlist', async (req,res) =>{
 	const users = await USER.find({});
@@ -84,3 +125,4 @@ app.get('/userlist', async (req,res) =>{
 	res.send('Data lost');
 })
 */
+

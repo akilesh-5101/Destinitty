@@ -1,0 +1,22 @@
+{
+    "messes" : 
+    {
+        "name": "mm2",
+        "src": "",
+        "description": ""
+    },
+    
+    "canteens":
+    {
+        "name": "Cafe Coffee Day", 
+        "src": "https://qph.cf2.quoracdn.net/main-qimg-017c9c980abb14d6d97cdc9cd4065aa8-lq",
+        "description": "Give it a try, I guess"
+    },
+
+    "restaurants":
+    {
+        "name": "A1",
+        "src": "",
+        "description": ""
+    }
+}
