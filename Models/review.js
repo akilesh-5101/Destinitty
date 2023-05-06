@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
 
-
-
 const Schema = mongoose.Schema({
     review:{
-        type: String,
+        type: String
     }
 })
 

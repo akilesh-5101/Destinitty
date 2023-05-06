@@ -45,9 +45,7 @@ app.post("/register", async(req, res) => {
 		console.log('Email already exists');
 		let m = '*** Email already exists';
 		res.render('index', {mes: m});
-	}
-	
-	
+	}	
 });
 
 app.post("/", async(req, res) => {
@@ -75,45 +73,65 @@ app.post("/", async(req, res) => {
 	
 });
 
+// The HOMMONONO WEBSITE
+
 app.get('/homepage', (req,res) => {
 	res.render('homepage', {user: username.split('@')[0]});
 })
 
 app.get('/Canteens', async(req,res) => {
-	let review = '';
 	try{
-		function extract() {
-			return User_Review.find({})
-		}
-		review = await new Promise(extract => setTimeout(extract, 2000));
+		rev = await User_Review.findOne({});
 	} catch (error) {
 		console.log(error);
 	}
-	if(review !== undefined){
-	res.render('food', {user: username.split('@')[0], review: review.review });
+
+	if(rev != null){
+		console.log('previous review extracted');
+		console.log(rev);
+		res.render('food', {user: username.split('@')[0], review: rev.review});
 	}
-	else res.render('food', {user: username.split('@')[0], review: ''});
-})
+	else {
+		res.render('food', {user: username.split('@')[0], review: ''});
+		console.log('Unsuccesful previous review extracted');
+	}
+});
 
-app.get('/Restaurants', (req,res) => {
-	res.render('food', {user: username.split('@')[0], review: ''});
-})
+// app.get('/Restaurants', (req,res) => {
+// 	res.render('food', {user: username.split('@')[0], review: ''});
+// })
 
-app.get('/Messes', (req,res) => {
-	res.render('food', {user: username.split('@')[0], review: ''});
-})
+// app.get('/Messes', (req,res) => {
+// 	res.render('food', {user: username.split('@')[0], review: ''});
+// })
 
 app.post("/Canteens", async(req, res) => {
 	const myData = {
-		review: req.body.name
+		review: ''
 	}
 	try{
-		await User_Review.insertMany([myData]);
-		console.log("item saved to database");
+		prev_rev = await User_Review.findOne({});
 	} catch (error) {
 		console.log(error);
 	}
-		res.render('food', {user: username.split('@')[0], review: myData.review});
+	
+	if(prev_rev === null){
+		myData.review = req.body.name;
+		console.log('previous review extracted');
+	}
+	else{
+		myData.review = prev_rev.review + req.body.name;
+		console.log('Unsuccesful previous review extracted');
+	}
+	
+	res.render('food', {user: username.split('@')[0], review: myData.review});
+	
+	try{
+		await User_Review.insertMany([myData]);
+		console.log("1 review saved to database");
+	} catch (error) {
+		console.log(error);
+	}
 });
 
 
