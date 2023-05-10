@@ -5,8 +5,6 @@
 	box-sizing: border-box;
 }
 
-
-
 body{
 	background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('https://raw.githubusercontent.com/akilesh-5101/Destinitty/main/images/aerial-shot-nitt.png');
 	background-repeat: no-repeat;
@@ -42,8 +40,8 @@ button{
 }
 #dest{
 	position: absolute;
-	top: 26%;
-	left: 8%;
+	top: 265px;
+	left: 200px;
 	user-select: none;
 }
 .modal-content{
